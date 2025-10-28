@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cisse Vamourou - Développeur Android, Designer UI/UX et passionné par l'Intelligence Artificielle">
+    <meta name="author" content="Cisse Vamourou">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Cisse Vamourou - Dev & Designer">
+    <meta property="og:description" content="Développeur Android | Designer UI/UX | Passionné par l'IA">
+    <meta property="og:type" content="website">
+    
+    <title>Cisse Vamourou - Développeur & Designer</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background elements */
+        .bg-animation {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.2;
+            animation: pulse 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .bg-1 {
+            top: 20%;
+            left: 20%;
+            background: #a855f7;
+            animation-delay: 0s;
+        }
+
+        .bg-2 {
+            top: 30%;
+            right: 20%;
+            background: #06b6d4;
+            animation-delay: 1s;
+        }
+
+        .bg-3 {
+            bottom: 20%;
+            left: 30%;
+            background: #ec4899;
+            animation-delay: 2s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.2; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 40px 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #06b6d4, #a855f7, #ec4899);
+            padding: 3px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .avatar-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .status-indicator {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 24px;
+            height: 24px;
+            background: #10b981;
+            border-radius: 50%;
+            border: 4px solid #0f172a;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .icons-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .tagline {
+            color: #d1d5db;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .bio-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bio-text {
+            color: #e5e7eb;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .skill-tag {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid;
+        }
+
+        .skill-kotlin {
+            background: rgba(16, 185, 129, 0.2);
+            color: #6ee7b7;
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .skill-compose {
+            background: rgba(6, 182, 212, 0.2);
+            color: #67e8f9;
+            border-color: rgba(6, 182, 212, 0.3);
+        }
+
+        .skill-figma {
+            background: rgba(168, 85, 247, 0.2);
+            color: #c084fc;
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+
+        .skill-ai {
+            background: rgba(236, 72, 153, 0.2);
+            color: #f9a8d4;
+            border-color: rgba(236, 72, 153, 0.3);
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .link-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            padding: 18px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .link-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-gradient {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .link-item:hover .link-gradient {
+            opacity: 0.2;
+        }
+
+        .link-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .link-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .link-text {
+            color: white;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .link-arrow {
+            color: #9ca3af;
+            transition: color 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .link-item:hover .link-arrow {
+            color: white;
+        }
+
+        .footer {
+            text-center;
+            margin-top: 25px;
+        }
+
+        .footer-text {
+            color: #9ca3af;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .card {
+                padding: 30px 20px;
+            }
+            
+            .name {
+                font-size: 26px;
+            }
+            
+            .avatar {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .avatar-inner {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background animations -->
+    <div class="bg-animation bg-1"></div>
+    <div class="bg-animation bg-2"></div>
+    <div class="bg-animation bg-3"></div>
+
+    <div class="container">
+        <div class="card">
+            <!-- Profile Section -->
+            <div class="profile-section">
+                <div class="avatar-wrapper">
+                    <div class="avatar">
+                        <div class="avatar-inner">CV</div>
+                    </div>
+                    <div class="status-indicator"></div>
+                </div>
+                
+                <h1 class="name">Cisse Vamourou</h1>
+                
+                <div class="icons-row">
+                    <svg class="icon" fill="currentColor" style="color: #06b6d4;" viewBox="0 0 24 24">
+                        <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                    </svg>
+                    <svg class="icon" fill="currentColor" style="color: #a855f7;" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <svg class="icon" fill="currentColor" style="color: #ec4899;" viewBox="0 0 24 24">
+                        <path d="M9 11.75A1.25 1.25 0 1 0 9 14.25 1.25 1.25 0 1 0 9 11.75zM15 11.75A1.25 1.25 0 1 0 15 14.25 1.25 1.25 0 1 0 15 11.75zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8"/>
+                    </svg>
+                </div>
+                
+                <p class="tagline">
+                    Développeur Android passionné | Designer UI/UX créatif | Explorateur de l'Intelligence Artificielle
+                </p>
+            </div>
+
+            <!-- Bio Section -->
+            <div class="bio-section">
+                <p class="bio-text">
+                    Je crée des expériences mobiles exceptionnelles en combinant développement Android natif,
+                    design UI/UX intuitif et technologies d'IA. Passionné par l'innovation, je transforme
+                    des idées complexes en solutions élégantes et performantes.
+                </p>
+            </div>
+
+            <!-- Skills -->
+            <div class="skills">
+                <span class="skill-tag skill-kotlin">Kotlin</span>
+                <span class="skill-tag skill-compose">Jetpack Compose</span>
+                <span class="skill-tag skill-figma">Figma</span>
+                <span class="skill-tag skill-ai">AI/ML</span>
+            </div>
+
+            <!-- Links -->
+            <div class="links">
+                <!-- MODIFIER VOS LIENS ICI -->
+                
+                <a href="https://github.com/essicouroumav" class="link-item" target="_blank" rel="noopener">
+                    <div class="link-gradient" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
+                    <div class="link-content">
+                        <div class="link-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                            <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                                <path d="M5 5h6v6H5zm8 0h6v6h-6zM5 13h6v6H5zm8 0h6v6h-6z"/>
+                            </svg>
+                        </div>
+                        <span class="link-text">Portfolio Android</span>
+                    </div>
+                    <svg class="link-arrow" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </a>
+
+                <a href="mailto:vamourou.ciisse@gmail.com" class="link-item">
+                    <div class="link-gradient" style="background: linear-gradient(135deg, #f97316, #dc2626);"></div>
+                    <div class="link-content">
+                        <div class="link-icon" style="background: linear-gradient(135deg, #f97316, #dc2626);">
+                            <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
+                        <span class="link-text">Me contacter</span>
+                    </div>
+                    <svg class="link-arrow" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </a>
+
+                <a href="https://behance.net/essicouroumav" class="link-item" target="_blank" rel="noopener">
+                    <div class="link-gradient" style="background: linear-gradient(135deg, #a855f7, #ec4899);"></div>
+                    <div class="link-content">
+                        <div class="link-icon" style="background: linear-gradient(135deg, #a855f7, #ec4899);">
+                            <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                                <path d="M7 4c-3.31 0-6 2.69-6 6s2.69 6 6 6c1.66 0 3.16-.67 4.24-1.76l1.06 1.06c-1.49 1.49-3.54 2.41-5.8 2.41C3.58 17.71 1 15.13 1 12S3.58 6.29 6.5 6.29c1.77 0 3.35.89 4.29 2.24l-1.08 1.08A4.48 4.48 0 007 7.5C5.34 7.5 4 8.84 4 10.5S5.34 13.5 7 13.5s3-1.34 3-3S8.66 7.5 7 7.5zm10 0c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 9.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+                            </svg>
+                        </div>
+                        <span class="link-text">Projets UI/UX Design</span>
+                    </div>
+                    <svg class="link-arrow" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </a>
+
+                <a href="https://github.com/essicouroumav" class="link-item" target="_blank" rel="noopener">
+                    <div class="link-gradient" style="background: linear-gradient(135deg, #06b6d4, #0891b2);"></div>
+                    <div class="link-content">
+                        <div class="link-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+                            <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                                <path d="M9 11.75A1.25 1.25 0 1 0 9 14.25 1.25 1.25 0 1 0 9 11.75zM15 11.75A1.25 1.25 0 1 0 15 14.25 1.25 1.25 0 1 0 15 11.75zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8"/>
+                            </svg>
+                        </div>
+                        <span class="link-text">Expérimentations IA</span>
+                    </div>
+                    <svg class="link-arrow" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </a>
+
+                <a href="https://github.com/essicouroumav" class="link-item" target="_blank" rel="noopener">
+                    <div class="link-gradient" style="background: linear-gradient(135deg, #374151, #1f2937);"></div>
+                    <div class="link-content">
+                        <div class="link-icon" style="background: linear-gradient(135deg, #374151, #1f2937);">
+                            <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                            </svg>
+                        </div>
+                        <span class="link-text">GitHub</span>
+                    </div>
+                    <svg class="link-arrow" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </a>
+
+                <a href="https://linkedin.com/in/essicouroumav" class="link-item" target="_blank" rel="noopener">
+                    <div class="link-gradient" style="background: linear-gradient(135deg, #2563eb, #1e40af);"></div>
+                    <div class="link-content">
+                        <div class="link-icon" style="background: linear-gradient(135deg, #2563eb, #1e40af);">
+                            <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                        </div>
+                        <span class="link-text">LinkedIn</span>
+                    </div>
+                    <svg class="link-arrow" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
